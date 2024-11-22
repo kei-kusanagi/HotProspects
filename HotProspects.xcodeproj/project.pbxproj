@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		0B9336F82CF1415800A848C3 /* SamplePackage in Frameworks */ = {isa = PBXBuildFile; productRef = 0B9336F72CF1415800A848C3 /* SamplePackage */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		0BB10A362CEE698400856CDE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -52,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B9336F82CF1415800A848C3 /* SamplePackage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +117,7 @@
 			);
 			name = HotProspects;
 			packageProductDependencies = (
+				0B9336F72CF1415800A848C3 /* SamplePackage */,
 			);
 			productName = HotProspects;
 			productReference = 0BB10A252CEE697600856CDE /* HotProspects.app */;
@@ -195,6 +201,9 @@
 			);
 			mainGroup = 0BB10A1C2CEE697600856CDE;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				0B9336F62CF1408700A848C3 /* XCRemoteSwiftPackageReference "SamplePackage" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 0BB10A262CEE697600856CDE /* Products */;
 			projectDirPath = "";
@@ -552,6 +561,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0B9336F62CF1408700A848C3 /* XCRemoteSwiftPackageReference "SamplePackage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/SamplePackage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0B9336F72CF1415800A848C3 /* SamplePackage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0B9336F62CF1408700A848C3 /* XCRemoteSwiftPackageReference "SamplePackage" */;
+			productName = SamplePackage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0BB10A1D2CEE697600856CDE /* Project object */;
 }
