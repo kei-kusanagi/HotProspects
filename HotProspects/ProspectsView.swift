@@ -12,6 +12,7 @@ struct ProspectsView: View {
     enum FilterType {
         case none, contacted, uncontacted
     }
+    
     @Query(sort: \Prospect.name) var prospects: [Prospect]
     @Environment(\.modelContext) var modelContext
     
@@ -29,7 +30,7 @@ struct ProspectsView: View {
     }
     
     var body: some View {
-        NavigationStack {
+      
             NavigationStack {
                 List(prospects) { prospect in
                     VStack(alignment: .leading) {
@@ -45,7 +46,7 @@ struct ProspectsView: View {
                             let prospect = Prospect(name: "Paul Hudson", emailAddress: "paul@hackingwithswift.com", isContacted: false)
                             modelContext.insert(prospect)
                         }
-                    }
+    
             }
         }
     }
