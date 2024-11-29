@@ -41,18 +41,24 @@ struct ProspectsView: View {
     var body: some View {
          NavigationStack {
              List(prospects, selection: $selectedProspects) { prospect in
-                 HStack {
-                     VStack(alignment: .leading) {
-                         Text(prospect.name)
-                             .font(.headline)
-                         Text(prospect.emailAddress)
-                             .foregroundStyle(.secondary)
-                     }
-                     if filter == .none && prospect.isContacted {
-                             Spacer()
-                             Image(systemName: "checkmark.circle.fill")
+                 NavigationLink{
+                     EditingView(prospect: prospect)
+                     } label: {
+                         HStack {
+                             VStack(alignment: .leading) {
+                                 Text(prospect.name)
+                                     .font(.headline)
+                                 Text(prospect.emailAddress)
+                                     .foregroundStyle(.secondary)
+                             }
+                             if filter == .none && prospect.isContacted {
+                                     Spacer()
+                                     Image(systemName: "checkmark.circle.fill")
+                                 }
+                         
                          }
                  }
+                 
                 .swipeActions {
                     Button("Delete", systemImage: "trash", role: .destructive) {
                         modelContext.delete(prospect)
@@ -95,6 +101,9 @@ struct ProspectsView: View {
             }
             .sheet(isPresented: $isShowingScanner){
                 CodeScannerView(codeTypes: [.qr], simulatedData: "Kei Kusanagi/n kei@mail.com", completion: handleScan)
+            }
+            .onAppear {
+                selectedProspects = []
             }
         }
     }
